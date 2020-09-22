@@ -30,7 +30,9 @@
 					<div>
 						<label for="add-item-quantity">Quantité : {{ item.quantity }}</label>
 						<input v-model="item.quantity" id="add-item-quantity" type="number" />
-						<button v-on:click="addToShoppingCart(item.quantity)">Ajouter au panier d'achat</button>
+						<button v-if="item.inStock === true" v-on:click="addToShoppingCart(item.quantity)">Ajouter au
+							panier d'achat</button>
+						<button v-else v-on:click="alert">Ajouter au panier d'achat</button>
 					</div>
 				</div>
 			</div>
@@ -107,6 +109,9 @@
 				addToShoppingCart(Qt) {
 					this.totalArticle += parseInt(Qt);
 					return this.totalArticle;
+				},
+				alert() {
+					alert("Cet item est en rupture de stock");
 				}
 			}
 		})
