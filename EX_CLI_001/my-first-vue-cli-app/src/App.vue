@@ -1,10 +1,10 @@
 <script>
-import HomeLink from "./components/HomeLink.vue";
+import NavLink from "./components/HomeLink.vue";
 
 export default {
   name: "App",
   components: {
-    HomeLink,
+    NavLink,
   },
 };
 </script>
@@ -12,10 +12,9 @@ export default {
 <template>
   <div id="app">
     <nav>
-      <HomeLink test="test" />
-      <a href="/about">À propos</a>
-      <a href="/contact">Contact</a>
+      <NavLink url="/" text="Accueil" />
+      <NavLink url="/about" text="About" />
+      <NavLink url="/contact" text="Contact" />
     </nav>
-    <p>Bienvenue sur notre page d'<HomeLink /></p>
   </div>
 </template>

@@ -1,16 +1,13 @@
 <script>
 export default {
-  name: "HomeLink",
-  props: {
-    test: String,
-  },
+  name: "NavLink",
+  props: ["url", "text"],
 };
 </script>
 
 <template>
   <div>
-    <a href="/">Accueil</a>
-    <a :href="test">{{ test }}</a>
+    <a :href="url">{{ text }}</a>
   </div>
 </template>
 
